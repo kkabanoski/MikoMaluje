@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikołaj Łokieć - Portfolio Sztuki</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="slides">
+
+        <header>
+            <div class="container">
+                <h1>Galeria Sztuki Mikołaja</h1>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="#about">O Mnie</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+            <section id="about" class="hero">
+                <div class="about-bg-slideshow layer-1"></div>
+                <div class="about-bg-slideshow layer-2"></div>
+                <div class="container">
+                    <img src="images/your-profile-pic.jpg" alt="Twoje Zdjęcie Profilowe" class="profile-pic">
+                    <h2>Witaj w Moim Twórczym Świecie</h2>
+                    <p>Cześć! Jestem Mikołaj, artystą z pasją do farb akrylowych. Znajdziesz tu kolekcję moich
+                        najnowszych
+                        prac, zgłębiających tematykę abstrakcji i natury. Zapraszam do oglądania!</p>
+                </div>
+            </section>
+    </div>
+
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2>Moje Prace</h2>
+
+                <div class="sort-controls">
+                    <label for="sort-by">Sortuj wg:</label>
+                    <select id="sort-by">
+                        <option value="default">Domyślna Kolejność</option>
+                        <option value="name-asc">Nazwy (A-Z)</option>
+                        <option value="name-desc">Nazwy (Z-A)</option>
+                        <option value="year-asc">Roku (Rosnąco)</option>
+                        <option value="year-desc">Roku (Malejąco)</option>
+                    </select>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-name="Impresja, wschód słońca po mojemu" data-year="2024">
+                        <img src="images/artwork1.jpg" data-full-src="images/artwork1-large.jpg"
+                            alt="Impresja, wschód słońca po mojemu" data-dimensions=" 54x68cm"
+                            data-story="Ten obraz przedstawia spokojną i nastrojową scenę portową o wschodzie lub zachodzie słońca. Kompozycja utrzymana jest w stylu impresjonistycznym i nawiązuje do słynnego dzieła Claude'a Moneta Impresja, wschód słońca.">
+                        <h3>Impresja, wschód słońca po mojemu</h3>
+                        <p>Technika: Akryl na Płótnie | Rok: 2024</p>
+                    </div>
+                    <div class="gallery-item" data-name="Zimowy świt" data-year="2024">
+                        <img src="images/artwork2.jpg" data-full-src="images/artwork2-large.jpg" alt="Zimowy świt"
+                            data-dimensions="90x120 cm"
+                            data-story="Ten obraz można określić jako impresjonistyczno-ekspresjonistyczny pejzaż zimowy. Styl łączy w sobie luźne, emocjonalne pociągnięcia pędzla (charakterystyczne dla ekspresjonizmu) z miękkim światłem i atmosferą, typowymi dla impresjonizmu.">
+                        <h3>Zimowy świt</h3>
+                        <p>Technika: Akryl na Płótnie | Rok: 2023</p>
+                    </div>
+                    <div class="gallery-item" data-name="Strażnicy dżungli" data-year="2025">
+                        <img src="images/artwork3.jpg" data-full-src="images/artwork3-large.jpg" alt="Strażnicy dżungli"
+                            data-dimensions="56x98 cm"
+                            data-story="Obraz przedstawia trzy barwne papugi siedzące na gałęziach w gęstej, tropikalnej dżungli. Kompozycja tętni kolorami i życiem, a dynamiczne pociągnięcia pędzla nadają scenie energii i egzotycznego klimatu.">
+                        <h3>Strażnicy dżungli</h3>
+                        <p>Technika: Akryl na Płótnie | Rok: 2025</p>
+                    </div>
+                    <div class="gallery-item" data-name="Szept Jesieni nad Jeziorem" data-year="2025">
+                        <img src="images/artwork4.jpg" data-full-src="images/artwork4-large.jpg"
+                            alt="Szept Jesieni nad Jeziorem" data-dimensions="50x60 cm"
+                            data-story="Zdjęcie ukazuje urzekający pejzaż, gdzie spokojne jezioro odbija się w harmonii z trawą i drzewami, ubranymi w złote oraz pomarańczowe szaty jesieni, pod delikatnie zachmurzonym niebem. Styl malowania, pełen dynamicznych pociągnięć pędzla i żywych, impresjonistycznych barw, tchnie poetycką energią natury.">
+                        <h3>Szept Jesieni nad Jeziorem</h3>
+                        <p>Technika: Akryl na Płótnie | Rok: 2025</p>
+                    </div>
+                    <div class="gallery-item" data-name="Most w Jesieni" data-year="2023">
+                        <img src="images/artwork5.jpg" data-full-src="images/artwork5-large.jpg" alt="Most w Jesieni"
+                            data-dimensions="70x100 cm"
+                            data-story="Obraz przedstawia idylliczny jesienny krajobraz z tradycyjnymi domami o rudych dachach, otoczonymi drzewami o złotych liściach. Kamienny most łukowy przecina spokojny strumień, tworząc harmonijną scenę wiejskiej sielanki. Całość skąpana jest w miękkim świetle, tworząc ciepłą i nostalgiczna atmosferę.">
+                        <h3>Most w Jesieni</h3>
+                        <p>Technika: Akryl na Płótnie | Rok: 2023</p>
+                    </div>
+                    <div class="gallery-item" data-name="Leśna Rzeka" data-year="2022">
+                        <img src="images/artwork6.jpg" data-full-src="images/artwork6-large.jpg" alt="Leśna Rzeka"
+                            data-dimensions="52x63cm"
+                            data-story="Ten obraz przedstawia spokojny, sielski krajobraz rzeki płynącej przez zielony, bujny las. Na pierwszym planie po lewej dominuje pień drzewa o czerwono-brązowej korze, a brzegi rzeki porastają zielono-żółte trawy i sitowie. Woda rzeki jest zielonkawo-niebieska i odbija światło, a w tle widać lekką mgłę, nadającą scenie głębi. Całość emanuje spokojem natury.">
+                        <h3>Leśna Rzeka</h3>
+                        <p>Technika: Akryl na Płótnie| Rok: 2022</p>
+                    </div>
+                    <div class="gallery-item" data-name="W Samym Sercu Sztormu" data-year="2022">
+                        <img src="images/artwork7.jpg" data-full-src="images/artwork7-large.jpg"
+                            alt="W Samym Sercu Sztormu" data-dimensions="80x90 cm"
+                            data-story="Ten obraz przedstawia żaglówkę walczącą z wzburzonym morzem podczas sztormu. Fale rozbijają się o kadłub, tworząc białe grzywy piany, a ciemne, burzowe niebo z prześwitami pomarańczowo-szarych chmur potęguje dramatyzm sceny. W oddali widać mewę, która również mierzy się z żywiołem.">
+                        <h3>W Samym Sercu Sztormu</h3>
+                        <p>Technika: Akryle na Płótnie | Rok: 2021</p>
+                    </div>
+                    <div class="gallery-item" data-name="Spokojna Śródziemnomorska Wioska" data-year="2022">
+                        <img src="images/artwork8.jpg" data-full-src="images/artwork8-large.jpg"
+                            alt="Spokojna Śródziemnomorska Wioska" data-dimensions="80x60 cm"
+                            data-story="Ten obraz przedstawia śródziemnomorską wioskę z białymi domami o pomarańczowych dachach, otoczoną zielonym krajobrazem i cyprysami. W tle widać łagodne wzgórza pod błękitnym niebem z delikatnymi chmurami. Scena emanuje spokojem i sielską atmosferą.">
+                        <h3>Spokojna Śródziemnomorska Wioska</h3>
+                        <p>Technika: Akryl | Rok: 2022</p>
+                    </div>
+                    <div class="gallery-item" data-name="Słoneczny Port" data-year="2023">
+                        <img src="images/artwork9.jpg" data-full-src="images/artwork9-large.jpg" alt="Słoneczny Port"
+                            data-dimensions="100x80 cm"
+                            data-story="Ten obraz przedstawia malownicze miasteczko portowe z kolorowymi budynkami o czerwonych dachach, usytuowane nad błękitną wodą zatoki. W porcie kołyszą się żaglówki o białych żaglach, a na brzegu widać sylwetki ludzi oraz wysoką wieżę w tle. Całość emanuje ciepłą, śródziemnomorską atmosferą.">
+                        <h3>Słoneczny Port</h3>
+                        <p>Technika: Akryl na Płótnie | Rok: 2023</p>
+                    </div>
+                    <div class="gallery-item" data-name="Jabłka w Wirze Barw" data-year="2017">
+                        <img src="images/artwork10.jpg" data-full-src="images/artwork10-large.jpg"
+                            alt="Jabłka w Wirze Barw" data-dimensions="60x60 cm"
+                            data-story="Ten obraz to dynamiczna martwa natura przedstawiająca trzy jabłka: jedno zielone, jedno czerwone i jedno żółte, ułożone na tle abstrakcyjnych plam barwnych w odcieniach różu, fioletu i beżu. Kompozycja charakteryzuje się swobodnymi pociągnięciami pędzla i artystycznym chaosem, z widocznymi drobnymi rozpryskami farby.">
+                        <h3>Jabłka w Wirze Barw</h3>
+                        <p>Technika: Akryle na Płótnie | Rok: 2017</p>
+                    </div>
+                    <div class="gallery-item" data-name="Burzowy Brzeg" data-year="2023">
+                        <img src="images/artwork11.jpg" data-full-src="images/artwork11-large.jpg" alt="Burzowy Brzeg"
+                            data-dimensions="63x54 cm"
+                            data-story="Ten obraz przedstawia malowniczą, pustą plażę z piaskiem w odcieniach beżu i pomarańczy, obmywaną przez turkusowe fale morza. Lewą stronę dominuje bujna, zielona roślinność, a w tle widać ciemne, burzowe chmury, które nadają scenie dramatyzmu i kontrastują z jasnością plaży. Kompozycja emanuje dziką, naturalną energią.">
+                        <h3>Burzowy Brzeg</h3>
+                        <p>Technika: Akryle | Rok: 2021</p>
+                    </div>
+                    <div class="gallery-item" data-name="Klify o Zachodzie Słońca" data-year="2024">
+                        <img src="images/artwork12.jpg" data-full-src="images/artwork12-large.jpg"
+                            alt="Klify o Zachodzie Słońca" data-dimensions="50x63 cm"
+                            data-story="Mroczny tusz, uchwycający tajemniczy wschód księżyca nad lasem.">
+                        <h3>Klify o Zachodzie Słońca</h3>
+                        <p>Technika: Akryle w wodzie | Rok: 2020</p>
+                    </div>
+                    <div class="gallery-item" data-name="Cytrusowa Martwa Natura" data-year="2021">
+                        <img src="images/artwork13.jpg" data-full-src="images/artwork13-large.jpg"
+                            alt="Cytrusowa Martwa Natura" data-dimensions="50x50 cm"
+                            data-story="Ten obraz przedstawia barwną martwą naturę z owocami cytrusowymi w niebieskiej misie, liśćmi i różowym kwiatem, a w tle widać dwa niebiesko-białe, wzorzyste wazony. Na pierwszym planie leży nóż i kilka przekrojonych kawałków owoców, co nadaje scenie świeżości i dynamizmu. Całość utrzymana jest w jasnej, radosnej kolorystyce.">
+                        <h3>Cytrusowa Martwa Natura</h3>
+                        <p>Technika: Akryl na płótnie | Rok: 2021</p>
+                    </div>
+                    <div class="gallery-item" data-name="Spokój Zachodu Słońcae" data-year="2020">
+                        <img src="images/artwork14.jpg" data-full-src="images/artwork14-large.jpg"
+                            alt="Spokój Zachodu Słońca" data-dimensions="110x80 cm"
+                            data-story="Ten obraz przedstawia spokojny krajobraz wodny z niebieską żaglówką, która delikatnie unosi się na powierzchni wody. W tle widać zalesione brzegi, a niebo mieni się delikatnymi odcieniami zachodzącego słońca, co nadaje scenie spokojnej, nostalgicznej atmosfery. Odbicie łodzi i drzew w wodzie tworzy harmonijną kompozycję.">
+                        <h3>Spokój Zachodu Słońca</h3>
+                        <p>Technika: Akryle na Płótnie | Rok: 2020</p>
+                    </div>
+                    <div class="gallery-item" data-name="Żagle o Zachodzie" data-year="2019">
+                        <img src="images/artwork15.jpg" data-full-src="images/artwork15-large.jpg"
+                            alt="Żagle o Zachodzie" data-dimensions="54x64"
+                            data-story="Ten obraz przedstawia stylizowane żaglówki na morzu, utrzymane w ciepłej, ekspresyjnej kolorystyce. Tło mieni się intensywnymi odcieniami pomarańczy i czerwieni, sugerując zachód słońca lub jaskrawe niebo, podczas gdy woda odbija te barwy. Kompozycja jest dynamiczna, z żaglami w różnych kolorach (czerwony, biały, pomarańczowy), co nadaje scenie ruchu i energii.">
+                        <h3>Żagle o Zachodzie</h3>
+                        <p>Technika: Akryle na Płótnie | Rok: 2019</p>
+                    </div>
+                    <div class="gallery-item" data-name="Skalny Łuk nad Morzem" data-year="2019">
+                        <img src="images/artwork16.jpg" data-full-src="images/artwork16-large.jpg"
+                            alt="Skalny Łuk nad Morzem" data-dimensions="30x60 cm"
+                            data-story="Ten obraz przedstawia imponujący, naturalny łuk skalny wynurzający się z błękitnego morza. Skała ma bogate, rdzawobrązowe i złociste odcienie, z widoczną teksturą, co sugeruje technikę impasto. Niebo jest jasne, z delikatnymi obłokami, a światło słoneczne odbija się od tafli wody.">
+                        <h3>Skalny Łuk nad Morzem</h3>
+                        <p>Technika: Akryle | Rok: 2019</p>
+                    </div>
+                    <div class="gallery-item" data-name=" Ognisty Zachód Nad Rzeką" data-year="2025">
+                        <img src="images/artwork17.jpg" data-full-src="images/artwork17-large.jpg"
+                            alt=" Ognisty Zachód Nad Rzeką" data-dimensions="60x40 cm"
+                            data-story="Ten obraz przedstawia spektakularny zachód słońca nad rzeką, której powierzchnia odbija intensywne odcienie pomarańczy, czerwieni i żółci. Brzegi rzeki porośnięte są zielonymi drzewami i wysokimi trawami, a niebo, zwłaszcza po prawej stronie, mieni się dramatycznymi, purpurowo-różowymi chmurami. Scena emanuje ciepłem i majestatem natury.">
+                        <h3> Ognisty Zachód Nad Rzeką</h3>
+                        <p>Technika: Akryle | Rok: 2025</p>
+                    </div>
+                    <div class="gallery-item" data-name="Spokojna Zatoka Rybacka" data-year="2018">
+                        <img src="images/artwork18.jpg" data-full-src="images/artwork18-large.jpg"
+                            alt="Spokojna Zatoka Rybacka" data-dimensions="100x70 cm"
+                            data-story="Ten obraz przedstawia spokojną nadmorską zatokę z piaszczystą plażą, na której stoją łodzie rybackie. W tle widać malowniczą wioskę z domami i kościołem, a na wodzie kołyszą się żaglówki. Niebo jest lekko zachmurzone, co nadaje scenie spokojny, ale realistyczny charakter.">
+                        <h3>Spokojna Zatoka Rybacka</h3>
+                        <p>Technika: Akryle na płótnie | Rok: 2018</p>
+                    </div>
+                    <div class="gallery-item" data-name="Spokojny Rejs pod Latarnią" data-year="2018">
+                        <img src="images/artwork19.jpg" data-full-src="images/artwork19-large.jpg"
+                            alt="Spokojny Rejs pod Latarnią" data-dimensions="A3"
+                            data-story="Ten obraz przedstawia żaglówkę z kolorowymi żaglami, płynącą po spokojnej wodzie. W tle widoczna jest latarnia morska na skalistym brzegu oraz mewy szybujące na pastelowym niebie, które mieni się odcieniami różu, błękitu i fioletu. Całość tworzy sielski i nastrojowy krajobraz morski.">
+                        <h3>Spokojny Rejs pod Latarnią</h3>
+                        <p>Technika: Tusz | Rok: 2018</p>
+                    </div>
+                    <div class="gallery-item" data-name="Wioska z Wiatrakiem i Łodziami" data-year="2024">
+                        <img src="images/artwork20.jpg" data-full-src="images/artwork20-large.jpg"
+                            alt="Wioska z Wiatrakiem i Łodziami" data-dimensions="1920x1080 px"
+                            data-story="Ten obraz przedstawia malowniczą wioskę portową z tradycyjnymi domami i wiatrakiem na pierwszym planie po lewej stronie. Dwie łodzie, jedna na brzegu, a druga w wodzie, dominują na pierwszym planie, a w tle widać kościół z wysokimi wieżami. Scena utrzymana jest w stonowanych barwach, z dominującymi szarościami nieba i wody.">
+                        <h3>Wioska z Wiatrakiem i Łodziami</h3>
+                        <p>Technika: Akryl | Rok: 2024</p>
+                    </div>
+                    <div class="gallery-item" data-name="Wiejski Pejzaż z Wiatrakiem" data-year="2017">
+                        <img src="images/artwork21.jpg" data-full-src="images/artwork21-large.jpg"
+                            alt="Wiejski Pejzaż z Wiatrakiem" data-dimensions="90x60 cm"
+                            data-story="Ten obraz przedstawia rozległy krajobraz wiejski z wiatrakiem na pierwszym planie po prawej stronie i domem z czerwonym dachem po lewej. Pola uprawne rozciągają się pod dynamicznym, pełnym obłoków niebem, a w dali widać wzgórza i sylwetki ptaków. Całość tworzy sielską, wiejską scenerię.">
+                        <h3>WWiejski Pejzaż z Wiatrakiem</h3>
+                        <p>Technika: Akryl | Rok: 2017</p>
+                    </div>
+                    <div class="gallery-item" data-name="Gruszki i Dzban" data-year="2018">
+                        <img src="images/artwork22.jpg" data-full-src="images/artwork22-large.jpg" alt="Gruszki i Dzban"
+                            data-dimensions="A4"
+                            data-story="Ten obraz przedstawia klasyczną martwą naturę z dzbanem o metalicznym połysku, ustawionym na drewnianym blacie, obok którego leży otwarta księga. Obok dzbana i na blacie rozmieszczone są gruszki, a tło stanowi ciemnozielona ściana, co nadaje scenie intymny i nastrojowy charakter. Gra światła i cienia podkreśla tekstury przedmiotów.">
+                        <h3>Gruszki i Dzban</h3>
+                        <p>Technika: Akryle | Rok: 2018</p>
+                    </div>
+                    <div class="gallery-item" data-name="Łodzie na Brzegu, Żagle na Morzu" data-year="2018">
+                        <img src="images/artwork23.jpg" data-full-src="images/artwork23-large.jpg"
+                            alt="Łodzie na Brzegu, Żagle na Morzu" data-dimensions="80x120 cm"
+                            data-story="Ten obraz przedstawia plażę z kolorowymi łodziami rybackimi wyciągniętymi na piasek, podczas gdy w oddali na wzburzonym morzu płyną żaglówki. Niebo jest błękitne z białymi chmurami, a fale rozbijają się o brzeg, tworząc dynamiczną scenę. Całość emanuje morskim klimatem i ruchem.">
+                        <h3>Łodzie na Brzegu, Żagle na Morzu</h3>
+                        <p>Technika: Alryle | Rok: 2018</p>
+                    </div>
+                    <div class="gallery-item" data-name="Jesienna Aleja" data-year="2020">
+                        <img src="images/artwork24.jpg" data-full-src="images/artwork24-large.jpg" alt="Jesienna Aleja"
+                            data-dimensions="40x73 cm"
+                            data-story="Ten obraz przedstawia aleję drzew, których liście mienią się intensywnymi odcieniami złota i pomarańczy, sugerując jesienną scenerię. Droga jest również w ciepłych barwach, a w oddali widać sylwetki ludzi, co nadaje kompozycji głębi. Kontrast między jaskrawymi kolorami drzew a głębokim błękitem nieba tworzy uderzający efekt.">
+                        <h3>Jesienna Aleja</h3>
+                        <p>Technika: Akryle | Rok: 2020</p>
+                    </div>
+                    <div class="gallery-item" data-name="Droga przez Pola" data-year="2023">
+                        <img src="images/artwork25.jpg" data-full-src="images/artwork25-large.jpg"
+                            alt="Droga przez Pola" data-dimensions="100x70 cm"
+                            data-story="Ten obraz przedstawia pagórkowaty, wiejski krajobraz z polną drogą wijącą się przez zielone pola. W tle widać dwa domy z czerwonymi dachami, ukryte wśród drzew, a nad wszystkim rozciąga się błękitne niebo z puszystymi, białymi chmurami. Całość emanuje spokojem i sielską atmosferą.">
+                        <h3>Droga przez Pola</h3>
+                        <p>Technika: Akryle | Rok: 2023</p>
+                    </div>
+                    <div class="gallery-item" data-name="Spokój Portu" data-year="2019">
+                        <img src="images/artwork26.jpg" data-full-src="images/artwork26-large.jpg" alt="Spokój Portu"
+                            data-dimensions="40x74 cm"
+                            data-story="Ten obraz przedstawia dwie łodzie żaglowe wyciągnięte na piaszczystym brzegu, z morzem o fioletowo-niebieskich odcieniach rozciągającym się w tle. Niebo jest pochmurne, w szarych barwach, a w oddali widać sylwetki ptaków. Całość tworzy nastrojową scenę, emanującą spokojem i lekką melancholią.">
+                        <h3>Spokój Portu</h3>
+                        <p>Technika: Akryle | Rok: 2019</p>
+                    </div>
+                    <div class="gallery-item" data-name="Zimowy Blask" data-year="2015">
+                        <img src="images/artwork27.jpg" data-full-src="images/artwork27-large.jpg" alt="Zimowy Blask"
+                            data-dimensions="53x47 cm"
+                            data-story="Ten obraz przedstawia zimowy krajobraz z wyraźnymi pniami drzew pokrytymi śniegiem, które dominują na pierwszym planie. W tle widać zamarzniętą rzekę lub jezioro o intensywnym błękitnym kolorze, a na horyzoncie pojawiają się ciepłe, pomarańczowe barwy zachodzącego słońca, kontrastujące z zimową scenerią. Całość tworzy bajkowy i malowniczy widok.">
+                        <h3>Zimowy Blask</h3>
+                        <p>Technika: Ołówek | Rok: 2015</p>
+                    </div>
+                    <div class="gallery-item" data-name="Morski Łuk" data-year="2025">
+                        <img src="images/artwork28.jpg" data-full-src="images/artwork28-large.jpg" alt="Morski Łuk"
+                            data-dimensions="83x70 cm"
+                            data-story="Ten obraz przedstawia skaliste wybrzeże z wysokimi klifami i naturalnym łukiem skalnym wpadającym do wzburzonego morza. Fale rozbijają się o brzeg, tworząc białą pianę, a nad całością unosi się błękitne niebo z puszystymi chmurami i szybującą mewą. Barwy są ciepłe, z dominującymi brązami klifów i błękitami morza, co nadaje scenie dramatyzmu i majestatu.">
+                        <h3>Morski Łuk</h3>
+                        <p>Technika: Akryl | Rok: 2025</p>
+                    </div>
+
+                </div>
+        </section>
+
+
+    <div class="slides">
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Skontaktuj Się</h2>
+                <p>Masz pytanie dotyczące moich prac lub interesuje Cię zlecenie? Śmiało pisz!</p>
+                <p>E-mail: <a href="mailto:lokiecmikolaj@gmail.com">lokiecmikolaj@gmail.com</a></p>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/mikoinstanet/" target="_blank" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100036396737158&locale=pl_PL/" target="_blank"
+                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@mikotiknet?lang=pl-PL" target="_blank" aria-label="TikTok"><i
+                            class="fab fa-tiktok"></i></a>
+                    </a>
+                </div>
+                <p>&copy; 2025 MikoMaluje. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </footer>
+    </div>
+    <div id="lightbox-overlay">
+        <div id="lightbox-content">
+            <span id="lightbox-close">&times;</span>
+            <img id="lightbox-image" src="" alt="Zoomed artwork">
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <button id="back-to-top" aria-label="Powrót na górę strony">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for navigation
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const mainNav = document.getElementById('main-nav');
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                    }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // JavaScript for Lightbox (Click-to-Zoom)
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+            const lightboxOverlay = document.getElementById('lightbox-overlay');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption'); // This will hold all details
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const fullSrc = item.getAttribute('data-full-src');
+                    const altText = item.getAttribute('alt');
+                    const dimensions = item.getAttribute('data-dimensions'); // New
+                    const story = item.getAttribute('data-story');           // New
+
+                    lightboxImage.src = fullSrc;
+
+                    // Build the caption content with all details
+                    let captionHtml = `<h3>${altText}</h3>`;
+
+                    // Get the technique/year from the sibling <p> tag
+                    const techniqueYearElement = item.nextElementSibling.nextElementSibling;
+                    if (techniqueYearElement && techniqueYearElement.tagName === 'P') {
+                        captionHtml += `<p>${techniqueYearElement.textContent}</p>`;
+                    }
+
+                    if (dimensions) {
+                        captionHtml += `<p><strong>Wymiary:</strong> ${dimensions}</p>`;
+                    }
+                    if (story) {
+                        captionHtml += `<p>${story}</p>`;
+                    }
+                    lightboxCaption.innerHTML = captionHtml; // Use innerHTML to render HTML tags inside
+
+                    lightboxOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            lightboxOverlay.addEventListener('click', (e) => {
+                if (e.target === lightboxOverlay) {
+                    lightboxOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
+                    lightboxOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+
+
+            // JavaScript for Mobile Navigation Toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    document.body.classList.toggle('menu-open');
+                });
+            }
+
+            // JavaScript for Sorting Gallery Items
+            const sortBySelect = document.getElementById('sort-by');
+            const galleryGrid = document.querySelector('.gallery-grid');
+            const initialGalleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+
+            sortBySelect.addEventListener('change', (event) => {
+                const sortBy = event.target.value;
+                let sortedItems = [];
+
+                if (sortBy === 'default') {
+                    sortedItems = initialGalleryItems;
+                } else {
+                    sortedItems = Array.from(document.querySelectorAll('.gallery-item'));
+                    sortedItems.sort((a, b) => {
+                        if (sortBy === 'name-asc') {
+                            const nameA = a.dataset.name.toLowerCase();
+                            const nameB = b.dataset.name.toLowerCase();
+                            return nameA.localeCompare(nameB, 'pl');
+                        } else if (sortBy === 'name-desc') {
+                            const nameA = a.dataset.name.toLowerCase();
+                            const nameB = b.dataset.name.toLowerCase();
+                            return nameB.localeCompare(nameA, 'pl');
+                        } else if (sortBy === 'year-asc') {
+                            const yearA = parseInt(a.dataset.year);
+                            const yearB = parseInt(b.dataset.year);
+                            return yearA - yearB;
+                        } else if (sortBy === 'year-desc') {
+                            const yearA = parseInt(a.dataset.year);
+                            const yearB = parseInt(b.dataset.year);
+                            return yearB - yearA;
+                        }
+                        return 0;
+                    });
+                }
+
+                sortedItems.forEach(item => {
+                    galleryGrid.appendChild(item);
+                });
+            });
+
+            // JavaScript for Background Slideshow Initialization
+            const slideshowLayers = [
+                document.querySelector('.about-bg-slideshow.layer-1'),
+                document.querySelector('.about-bg-slideshow.layer-2')
+            ];
+            const backgroundImages = [
+                'images/background-slide1.jpg',
+                'images/background-slide2.jpg',
+                'images/background-slide3.jpg',
+                'images/background-slide4.jpg' // Add more paths as needed
+            ];
+            let currentImageIndex = 0;
+            let activeLayer = 0; // 0 for layer-1, 1 for layer-2
+
+            // Preload all images to prevent flickers
+            backgroundImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+
+            // Set initial backgrounds for both layers immediately
+            slideshowLayers[activeLayer].style.backgroundImage = `url(${backgroundImages[currentImageIndex]})`;
+            slideshowLayers[activeLayer].style.opacity = '1';
+
+            // Set the *next* image on the inactive layer, but keep it transparent
+            const nextInitialImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+            const inactiveInitialLayer = (activeLayer + 1) % 2;
+            slideshowLayers[inactiveInitialLayer].style.backgroundImage = `url(${backgroundImages[nextInitialImageIndex]})`;
+            slideshowLayers[inactiveInitialLayer].style.opacity = '0'; // Ensure it's hidden
+
+            currentImageIndex = nextInitialImageIndex; // Update current index for the next cycle
+
+            function crossfadeBackground() {
+                const nextImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+                const inactiveLayer = (activeLayer + 1) % 2;
+
+                // Set the next image on the inactive layer
+                slideshowLayers[inactiveLayer].style.backgroundImage = `url(${backgroundImages[nextImageIndex]})`;
+
+                // Fade in the inactive layer, making it active
+                // The transition property in CSS handles the speed
+                slideshowLayers[inactiveLayer].style.opacity = '1';
+                slideshowLayers[activeLayer].style.opacity = '0'; // Fade out the old active layer
+
+                activeLayer = inactiveLayer; // Switch active layer
+                currentImageIndex = nextImageIndex; // Update for the next cycle
+            }
+
+            // Start cycling through backgrounds
+            // Image will be visible for about 5 seconds, with 2s fade in/out
+            setInterval(crossfadeBackground, 7000); // Total cycle time: image display + transition
+
+            // JavaScript for Back to Top Button
+            const backToTopButton = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) { // Show button after scrolling 300px
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

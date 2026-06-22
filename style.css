@@ -1,0 +1,675 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+    /* Background */
+    --primary-color: #0f1115;
+    --secondary-color: #171a20;
+    --light-bg-color: #0b0d10;
+    --light-section-bg: #12151b;
+
+    /* Accent */
+    --accent-color: #d4a35f;
+
+    /* Text */
+    --text-color: #f5f5f5;
+    --secondary-text-color: #c8c8c8;
+    --light-text-color: #8b9098;
+    --white-color: #ffffff;
+
+    /* Borders */
+    --border-color: #2a2f38;
+
+    /* Shadows */
+    --shadow-light: 0 2px 12px rgba(0, 0, 0, 0.25);
+    --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.35);
+    --shadow-big: 0 2px 10px rgb(0, 0, 0);
+    --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.45);
+
+    /* Animations */
+    --transition-speed: 0.3s;
+    --transition-slow: 2s;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg-color);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;  /* Better font rendering on WebKit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Better font rendering on Firefox */
+}
+
+.slides {
+    width: 100%;
+    height: 100vh;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    
+
+}
+
+header {
+    display: flex;
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 1.5rem 5%;
+    /* Combined padding-left/right into padding */
+    border-bottom: 5px solid var(--accent-color);
+    box-shadow: var(--shadow-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+header nav ul li {
+    padding: 0 25px;
+}
+
+header nav ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color var(--transition-speed) ease;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Hamburger menu toggle button --- */
+.menu-toggle {
+    display: none;
+    /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: var(--white-color);
+    cursor: pointer;
+    padding: 10px;
+    transition: color var(--transition-speed) ease;
+    z-index: 1000;
+    /* Ensure it's above other content if menu overlays */
+}
+
+.menu-toggle:hover {
+    color: var(--accent-color);
+}
+
+/* --- Sections --- */
+section {
+    padding: 60px 0;
+    text-align: center;
+        height: 90%;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light-section-bg);
+}
+
+h2 {
+    color: var(--text-color);
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* --- Hero Section (About) --- */
+.hero {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+    color: var(--white-color);
+    display: flex;
+    /* Use flexbox for vertical centering if needed, or keep text-align center */
+    align-items: start;
+    justify-content: center;
+    min-height: 60vh;
+    /* Ensure it takes up a good portion of the viewport height */
+    height: 90%;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 3;
+    /* Ensure content is above both slideshow layers and overlay */
+    
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* Makes it round */
+    object-fit: cover;
+    border: 5px solid var(--accent-color);
+    box-shadow: var(--shadow-light);
+    margin-bottom: 25px;
+}
+
+
+/* --- Background Slideshow Styling --- */
+.about-bg-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 70%;
+    transition: opacity var(--transition-slow) ease-in-out;
+    /* Slower transition for a smoother fade */
+    z-index: 1;
+    /* Both layers are behind the content */
+}
+
+/* Layer 2 specifically needs to be above Layer 1 to crossfade */
+.about-bg-slideshow.layer-2 {
+    z-index: 2;
+    /* This layer will fade in on top of layer-1, then switch roles */
+}
+
+/* Dark overlay for shadowing effect */
+.hero::before {
+    /* Use ::before pseudo-element on .hero for the overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 50% black overlay */
+    z-index: 2;
+    /* Above the images, below the content */
+}
+
+/* Ensure other elements in hero section are readable */
+.hero h2,
+.hero p {
+    color: var(--secondary-text-color);
+    /* Explicitly set color */
+    text-shadow: var(--shadow-big);
+}
+
+
+/* --- Sorting Controls Styling --- */
+.sort-controls {
+    text-align: right;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    /* Kept for consistent spacing if container has left/right padding */
+}
+
+.sort-controls label {
+    font-weight: 600;
+    margin-right: 10px;
+    color: var(--secondary-text-color);
+}
+
+.sort-controls select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px 5px 0px 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    background-color: var(--light-bg-color);
+    cursor: pointer;
+    outline: none;
+    transition: border-color var(--transition-speed) ease;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 18px;
+    color: var(--secondary-text-color);
+}
+
+.sort-controls select:hover,
+.sort-controls select:focus {
+    border-color: var(--accent-color);
+}
+
+
+/* --- Gallery Section --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    background: var(--light-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    /* Use flexbox to organize content within the item */
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item h3 {
+    margin: 15px 10px 5px;
+    color: var(--text-color);
+    font-size: 1.3em;
+    font-family: 'Playfair Display', serif;
+}
+
+.gallery-item p {
+    margin: 0 10px 15px;
+    color: var(--secondary-text-color);
+    font-size: 0.9em;
+    flex-grow: 1;
+    /* Allows text to take up remaining space, pushing footer down */
+}
+
+.contact-section {
+    background-color: var(--light-section-bg);
+}
+
+.contact-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed) ease;
+}
+
+.contact-section a:hover {
+    color: var(--accent-color);
+    /* A darker red, good to keep for specific hover */
+    text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* --- Social Icons Styling --- */
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: var(--white-color);
+    font-size: 2.2em;
+    margin: 0 10px;
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+
+/* --- Lightbox Styles --- */
+#lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+}
+
+#lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#lightbox-content {
+    position: relative;
+    background: var(--white-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* Add gap for consistent spacing between image and text */
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+#lightbox-close:hover {
+    color: var(--accent-color);
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 70vh;
+    /* Adjust if 80vh was too tall on some screens */
+    display: block;
+    margin: 0 auto;
+    /* Center image horizontally */
+    object-fit: contain;
+    /* Ensures entire image is visible, not cropped */
+}
+
+#lightbox-caption {
+    color: var(--secondary-text-color);
+    font-size: 1.1em;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* Space between details */
+    padding: 0 10px;
+    /* Small horizontal padding for caption text */
+    max-height: 20vh;
+    /* Limit height to prevent large captions from pushing image off screen */
+    overflow-y: auto;
+    /* Allow scrolling for long captions */
+}
+
+#lightbox-caption h3 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.5em;
+    font-family: 'Playfair Display', serif;
+}
+
+#lightbox-caption p {
+    margin: 0;
+    color: var(--light-text-color);
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+#lightbox-caption p strong {
+    color: var(--secondary-text-color);
+}
+
+
+/* --- Back to Top Button --- */
+#back-to-top {
+    display: none;
+    /* Hidden by default (controlled by JS) */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: var(--shadow-medium);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+#back-to-top:hover {
+    background-color: #c0392b;
+    /* Darker shade on hover */
+    transform: translateY(-3px);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        flex-grow: 1;
+        text-align: left;
+        font-size: 2em;
+    }
+
+    .menu-toggle {
+        display: flex;
+        /* Show hamburger button on mobile */
+    }
+
+    header nav {
+        width: 100%;
+        max-height: 0;
+        /* Hidden by default */
+        overflow: hidden;
+        transition: max-height var(--transition-speed) ease-out;
+        order: 3;
+        /* Push nav below h1 and toggle */
+    }
+
+    header nav.active {
+        max-height: 300px;
+        /* Adjust as needed based on number of menu items */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0;
+        background: var(--secondary-color);
+        border-radius: 0 0 8px 8px;
+        box-shadow: var(--shadow-light);
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        padding: 10px 20px;
+        width: 100%;
+        text-align: left;
+    }
+
+    header nav ul li a {
+        display: block;
+        color: var(--light-text-color);
+    }
+
+    header nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--accent-color);
+    }
+
+    /* Adjust sorting controls for mobile */
+    .sort-controls {
+        text-align: center;
+        margin-bottom: 20px;
+        padding-right: 0;
+    }
+
+    .sort-controls select {
+        width: 80%;
+    }
+
+    /* Social icons on mobile */
+    .social-icons {
+        margin-bottom: 15px;
+    }
+
+    .social-icons a {
+        font-size: 1.8em;
+        margin: 0 8px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    /* Adjust hero section for mobile */
+    .hero {
+        min-height: 50vh;
+        /* Slightly less height on smaller screens */
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+
+    #lightbox-image {
+        max-height: 70vh;
+    }
+
+    #lightbox-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header nav ul li {
+        padding: 8px 15px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .profile-pic {
+        width: 100px;
+        /* Slightly smaller on very small screens */
+        height: 100px;
+    }
+
+    .hero p {
+        font-size: 0.95em;
+    }
+
+    .gallery-item img {
+        height: 160px;
+    }
+
+    #back-to-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
+        font-size: 18px;
+    }
+}
