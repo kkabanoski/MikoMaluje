@@ -36,6 +36,36 @@
     box-sizing: border-box;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--light-section-bg);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* Wyłączamy nasz poprzedni globalny smooth scroll z JS, 
+       ponieważ teraz to przeglądarka zajmie się płynnym przyciąganiem sekcji */
+    scroll-snap-type: y mandatory !important;
+    overflow-y: auto;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -50,6 +80,10 @@ body {
 .slides {
     width: 100%;
     height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always; /* Wymusza zatrzymanie na każdej sekcji, nie pozwala jej "przelecieć" */
+    position: relative;
+    box-sizing: border-box;
 }
 
 body.menu-open {
@@ -177,10 +211,11 @@ h2::after {
 }
 
 .hero .container {
+    max-width: 90;
     position: relative;
     z-index: 3;
     /* Ensure content is above both slideshow layers and overlay */
-    
+    font-size: large;
 }
 
 .profile-pic {
@@ -280,16 +315,87 @@ h2::after {
     border-color: var(--accent-color);
 }
 
+.container2 {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 20px 0;    
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-section {
+    height: 90%;                     
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    box-sizing: border-box;
+}
 
 /* --- Gallery Section --- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Tworzymy dokładnie 2 rzędy o stałej wysokości (np. 380px każdy) */
+    grid-template-rows: repeat(2, 380px); 
+    /* Kluczowe: elementy układają się w kolumnach zamiast w rzędach */
+    grid-auto-flow: column;               
+    /* Ustalamy stałą szerokość dla każdej kolumny kafelków */
+    grid-auto-columns: 300px;             
+    
+    overflow-x: auto;                /* Włączenie poziomego przewijania */
+    overflow-y: hidden;              /* Blokada pionowego przewijania */
     gap: 25px;
-    padding: 20px 0;
+    padding: 20px 10px 30px 10px;    /* Margines dolny na scrollbar */
+    scroll-behavior: smooth;
+    
+    /* Scroll Snapping */
+    scroll-snap-type: x mandatory;   
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: auto;
+}
+
+@media (hover: hover) {
+
+    html {
+        scroll-behavior: auto !important; /* Pozwala skryptowi JS w pełni kontrolować płynność strony */
+    }
+
+
+    .gallery-grid {
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (max-height: 1100px) {
+    .gallery-grid {
+        /* Przełączamy na 1 rząd zajmujący całą dostępną przestrzeń */
+        grid-template-rows: 100%; 
+        /* Kafelki stają się nieco wyższe i smuklejsze, dopasowane do 1 rzędu */
+        grid-auto-columns: min(280px, 45vh); 
+        height: 45vh;
+    }
+}
+
+.gallery-grid::-webkit-scrollbar {
+    height: 8px;                     /* Wysokość poziomego paska */
+}
+
+.gallery-grid::-webkit-scrollbar-track {
+    background: var(--secondary-color); /* Tło paska pasujące do ciemnego motywu */
+    border-radius: 10px;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb {
+    background: var(--accent-color);    /* Twój złoty kolor akcentu */
+    border-radius: 10px;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb:hover {
+    background: #b88b4c;                /* Lekko ciemniejszy odcień akcentu po najechaniu */
 }
 
 .gallery-item {
+    flex: 0 0 300px;                 /* Kluczowe: zapobiega kurczeniu się (szerokość ustawiona na sztywno np. 300px) */
     background: var(--light-bg-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -299,8 +405,10 @@ h2::after {
     cursor: pointer;
     text-align: center;
     display: flex;
-    /* Use flexbox to organize content within the item */
     flex-direction: column;
+    
+    /* Punkt przyciągania dla scroll-snapping */
+    scroll-snap-align: start;        
 }
 
 .gallery-item:hover {
@@ -363,13 +471,29 @@ footer {
     color: var(--white-color);
     text-align: center;
     padding: 25px 0;
-    margin-top: 50px;
+
     font-size: 0.9em;
 }
 
 /* --- Social Icons Styling --- */
 .social-icons {
     margin-bottom: 20px;
+    background-color: var(--light-section-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 55px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.social-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
 }
 
 .social-icons a {
@@ -410,7 +534,7 @@ footer {
 
 #lightbox-content {
     position: relative;
-    background: var(--white-color);
+    background: var(--light-section-bg);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -450,7 +574,7 @@ footer {
 }
 
 #lightbox-caption {
-    color: var(--secondary-text-color);
+    color: var(--secondary-text);
     font-size: 1.1em;
     text-align: center;
     margin: 0;
@@ -468,7 +592,7 @@ footer {
 
 #lightbox-caption h3 {
     margin: 0;
-    color: var(--primary-color);
+    color: var(--text-color);
     font-size: 1.5em;
     font-family: 'Playfair Display', serif;
 }
@@ -525,40 +649,13 @@ footer {
         font-size: 2em;
     }
 
-    .menu-toggle {
-        display: flex;
-        /* Show hamburger button on mobile */
-    }
 
-    header nav {
-        width: 100%;
-        max-height: 0;
-        /* Hidden by default */
-        overflow: hidden;
-        transition: max-height var(--transition-speed) ease-out;
-        order: 3;
-        /* Push nav below h1 and toggle */
-    }
 
-    header nav.active {
-        max-height: 300px;
-        /* Adjust as needed based on number of menu items */
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 0;
-        background: var(--secondary-color);
-        border-radius: 0 0 8px 8px;
-        box-shadow: var(--shadow-light);
-        margin-top: 10px;
-    }
 
     header nav ul li {
         padding: 10px 20px;
         width: 100%;
-        text-align: left;
+        text-align: center;
     }
 
     header nav ul li a {
