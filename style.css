@@ -206,8 +206,8 @@ h2::after {
     align-items: start;
     justify-content: center;
     min-height: 60vh;
-    /* Ensure it takes up a good portion of the viewport height */
-    height: 90%;
+
+
 }
 
 .hero .container {
@@ -465,13 +465,21 @@ h2::after {
     text-decoration: underline;
 }
 
+#contact {
+    display: flex;
+    padding: 0;
+    height: 85%;
+    align-items: center;
+    justify-content:center ;
+}
+
 /* --- Footer --- */
 footer {
     background: var(--primary-color);
     color: var(--white-color);
     text-align: center;
     padding: 25px 0;
-
+    height: 15%;
     font-size: 0.9em;
 }
 
@@ -751,7 +759,7 @@ footer {
 
     .profile-pic {
         width: 100px;
-        /* Slightly smaller on very small screens */
+
         height: 100px;
     }
 
